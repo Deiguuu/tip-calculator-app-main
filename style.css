@@ -58,7 +58,6 @@ label {
   font-size: 1rem;
   font-weight: 700;
   color: var(--Dark-grayish-cyan-2);
-  position: relative;
   display: block;
 }
 
@@ -176,13 +175,15 @@ form .input-field {
 article.display-container {
   background-color: var(--Very-dark-cyan);
   border-radius: 10px;
-  margin-top: 5%;
-  padding: 1.1rem;
+  margin-top: 2rem; /* Aumentar el margen superior para separar del formulario */
+  padding: 2rem; /* Aumentar el padding */
+  width: 100%; /* Asegurarse de que ocupe todo el ancho disponible */
+  max-width: 400px; /* Ajustar el ancho máximo según sea necesario */
 }
 
 .display-description {
   color: var(--Light-grayish-cyan-1);
-  font-size: 1rem;
+  font-size: 1.2rem; /* Aumentar el tamaño de fuente */
   font-weight: 700;
 }
 
@@ -190,7 +191,7 @@ article.display-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 1rem 0px;
+  margin: 1.5rem 0; /* Aumentar el margen entre los elementos */
 }
 
 p:not(.amount, .display-description) {
@@ -199,7 +200,7 @@ p:not(.amount, .display-description) {
 
 p.amount {
   color: var(--Strong-cyan);
-  font-size: 2rem;
+  font-size: 2.5rem; /* Aumentar el tamaño de fuente */
   font-weight: bold;
 }
 
@@ -237,7 +238,6 @@ footer {
   body {
     justify-content: center;
     align-items: center;
-    display: flex;
   }
 
   section.container {
