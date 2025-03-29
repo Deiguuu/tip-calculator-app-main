@@ -23,12 +23,10 @@
 body {
   background-color: var(--Light-grayish-cyan-2);
   font-family: "Space Mono", "Courier New", monospace;
-
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
-
   min-height: 100vh;
   max-width: 1600px;
   width: 100%;
@@ -40,19 +38,17 @@ body {
 }
 
 /* ----------------- card section ---------------------- */
-
 section.container {
   background-color: var(--White);
   border-radius: 5% 5% 0 0;
   padding: 1.5rem;
   width: 100vw;
-
   display: flex;
   flex-direction: column;
   transition: all 0.2s linear;
 }
-/* --------- left section ----------- */
 
+/* --------- left section ----------- */
 form {
   position: relative;
   margin-top: 1.4rem;
@@ -70,7 +66,7 @@ label span {
   display: none;
 }
 
-/* enable when value 0 */
+/* Habilitar cuando el valor es 0 */
 label span.empty {
   display: inline;
   color: var(--red);
@@ -79,10 +75,10 @@ label span.empty {
 }
 
 .num-people #people-count.empty {
-  border: 3px solid rgb(255, 102, 102, 0.5);
+  border: 3px solid rgba(255, 102, 102, 0.5);
 }
 
-/* outline of input fields */
+/* Outline de los campos de entrada */
 form input:focus {
   border: 3px solid hsla(172, 67%, 45%, 0.445);
   border-radius: 5px;
@@ -95,17 +91,15 @@ form .input-field {
   text-align: right;
   border-radius: 5px;
   border: 3px solid transparent;
-
   font-family: "Space Mono", "Courier New", monospace;
   font-size: 1.4rem;
   font-weight: 700;
-
   padding: 5px;
   max-width: 100%;
   width: 100%;
 }
 
-/* icons */
+/* ----------------- Íconos en los inputs ---------------- */
 .amount-input::before,
 .num-people::before {
   position: absolute;
@@ -116,14 +110,14 @@ form .input-field {
   opacity: 0.5;
 }
 
-form.amount-input::before {
+.amount-input::before {
   display: inline-block;
   font-family: "Font Awesome 5 Free";
   content: "\f155";
   font-weight: 700;
 }
 
-form.num-people::before {
+.num-people::before {
   display: inline-block;
   font-family: "Font Awesome 5 Free";
   content: "\f406";
@@ -166,7 +160,7 @@ form.num-people::before {
   color: var(--Very-dark-cyan);
 }
 
-/* enable on click */
+/* Estado activo al hacer clic */
 .percent-options > button.click {
   background-color: var(--Strong-cyan);
 }
@@ -209,7 +203,7 @@ p.amount {
   font-weight: bold;
 }
 
-/* reset button */
+/* ---------- Botón Reset ---------- */
 button.reset-btn {
   max-width: 100%;
   width: 100%;
@@ -218,10 +212,10 @@ button.reset-btn {
   font-weight: bold;
   font-size: 1.4rem;
   text-transform: uppercase;
-
   border-radius: 5px;
   border: none;
   background-color: var(--Dark-grayish-cyan-2);
+  transition: all 0.2s linear;
 }
 
 button.reset-btn:enabled {
@@ -233,21 +227,17 @@ button.reset-btn:enabled:hover {
   background-color: var(--Light-grayish-cyan-2);
 }
 
-/* ------------------- footer ------------------- */
+/* ------------------- Footer ------------------- */
 footer {
   display: none;
 }
 
-/* ====================== media queries ======================= */
+/* ====================== Media Queries ======================= */
 @media screen and (min-width: 768px) {
   body {
     justify-content: center;
     align-items: center;
     display: flex;
-  }
-
-  #logo {
-    margin-top: 0px;
   }
 
   section.container {
@@ -257,32 +247,10 @@ footer {
     width: 95%;
     border-radius: 20px;
     padding: 2rem;
-    height: auto;
-    margin: 0 auto;
   }
 
-  .container > article {
-    flex-basis: 47%;
-    margin: 0;
-  }
-
-  /* ----select tip---- */
   .percent-options {
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 1.1 rem;
+    gap: 1.1rem;
   }
-
-  /* ---reset button--- */
-  button.reset-btn {
-    margin-top: 8rem;
-  }
-  
-  button.reset-btn:enabled {
-    box-shadow: 0px 5px var(--Light-grayish-cyan-2);
-  }
-
-  button.reset-btn:active {
-    transform: translateY(3px);
-    transition: all 0.2s linear;
-    box-shadow: 0px 3px var(--Dark-grayish-cyan-2);
-  }
+}
