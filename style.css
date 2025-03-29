@@ -25,11 +25,11 @@ body {
   font-family: "Space Mono", "Courier New", monospace;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
   min-height: 100vh;
-  max-width: 1600px;
   width: 100%;
+  padding: 20px;
 }
 
 #logo {
@@ -40,48 +40,30 @@ body {
 /* ----------------- card section ---------------------- */
 section.container {
   background-color: var(--White);
-  border-radius: 5% 5% 0 0;
-  padding: 1.5rem;
-  width: 100vw;
+  border-radius: 20px;
+  padding: 2rem;
+  width: 90%;
+  max-width: 850px;
   display: flex;
   flex-direction: column;
-  transition: all 0.2s linear;
+  gap: 20px;
 }
 
 /* --------- left section ----------- */
 form {
   position: relative;
   margin-top: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
 label {
   font-size: 1rem;
   font-weight: 700;
   color: var(--Dark-grayish-cyan-2);
+  position: relative;
   display: block;
-}
-
-label span {
-  display: none;
-}
-
-/* Habilitar cuando el valor es 0 */
-label span.empty {
-  display: inline;
-  color: var(--red);
-  position: absolute;
-  right: 0;
-}
-
-.num-people #people-count.empty {
-  border: 3px solid rgba(255, 102, 102, 0.5);
-}
-
-/* Outline de los campos de entrada */
-form input:focus {
-  border: 3px solid hsla(172, 67%, 45%, 0.445);
-  border-radius: 5px;
-  outline: none;
 }
 
 form .input-field {
@@ -93,41 +75,16 @@ form .input-field {
   font-family: "Space Mono", "Courier New", monospace;
   font-size: 1.4rem;
   font-weight: 700;
-  padding: 5px;
+  padding: 10px;
   max-width: 100%;
   width: 100%;
-}
-
-/* ----------------- Íconos en los inputs ---------------- */
-.amount-input::before,
-.num-people::before {
-  position: absolute;
-  top: 38px;
-  left: 13px;
-  font-size: 1.1rem;
-  color: var(--Dark-grayish-cyan-1);
-  opacity: 0.5;
-}
-
-.amount-input::before {
-  display: inline-block;
-  font-family: "Font Awesome 5 Free";
-  content: "\f155";
-  font-weight: 700;
-}
-
-.num-people::before {
-  display: inline-block;
-  font-family: "Font Awesome 5 Free";
-  content: "\f406";
-  font-weight: 700;
 }
 
 /*---------- select tip ----------- */
 .percent-options {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  gap: 15px;
   max-width: 100%;
   width: 100%;
   margin-top: 10px;
@@ -137,7 +94,7 @@ form .input-field {
 .custom-percentage {
   border: none;
   border-radius: 5px;
-  padding: 5px;
+  padding: 10px;
   font-family: "Space Mono", "Courier New", monospace;
   font-weight: bold;
   font-size: 1.4rem;
@@ -150,57 +107,26 @@ form .input-field {
   letter-spacing: 1.2px;
 }
 
-.percent-options > button::after {
-  content: "%";
-}
-
-.percent-options > button:hover {
-  background-color: var(--Light-grayish-cyan-2);
-  color: var(--Very-dark-cyan);
-}
-
-/* Estado activo al hacer clic */
-.percent-options > button.click {
-  background-color: var(--Strong-cyan);
-}
-
-.custom-percentage {
-  width: 100%;
-  text-align: center;
-  background-color: var(--Light-grayish-cyan-1);
-  color: var(--Dark-grayish-cyan-2);
-}
-
 /* ----------- right section ------------- */
 article.display-container {
   background-color: var(--Very-dark-cyan);
   border-radius: 10px;
-  margin-top: 2rem; /* Aumentar el margen superior para separar del formulario */
-  padding: 2rem; /* Aumentar el padding */
-  width: 100%; /* Asegurarse de que ocupe todo el ancho disponible */
-  max-width: 400px; /* Ajustar el ancho máximo según sea necesario */
-}
-
-.display-description {
-  color: var(--Light-grayish-cyan-1);
-  font-size: 1.2rem; /* Aumentar el tamaño de fuente */
-  font-weight: 700;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
 .display-container > div {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 1.5rem 0; /* Aumentar el margen entre los elementos */
-}
-
-p:not(.amount, .display-description) {
-  color: var(--Dark-grayish-cyan-1);
+  margin: 1rem 0px;
 }
 
 p.amount {
   color: var(--Strong-cyan);
-  font-size: 2.5rem; /* Aumentar el tamaño de fuente */
+  font-size: 2rem;
   font-weight: bold;
 }
 
@@ -208,7 +134,7 @@ p.amount {
 button.reset-btn {
   max-width: 100%;
   width: 100%;
-  padding: 5px;
+  padding: 10px;
   font-family: "Space Mono", "Courier New", monospace;
   font-weight: bold;
   font-size: 1.4rem;
@@ -228,29 +154,22 @@ button.reset-btn:enabled:hover {
   background-color: var(--Light-grayish-cyan-2);
 }
 
-/* ------------------- Footer ------------------- */
-footer {
-  display: none;
-}
-
 /* ====================== Media Queries ======================= */
 @media screen and (min-width: 768px) {
   body {
     justify-content: center;
     align-items: center;
+    display: flex;
   }
 
   section.container {
     flex-direction: row;
     justify-content: space-between;
-    max-width: 850px;
-    width: 95%;
-    border-radius: 20px;
-    padding: 2rem;
+    gap: 30px;
   }
 
   .percent-options {
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 1.1rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
   }
 }
